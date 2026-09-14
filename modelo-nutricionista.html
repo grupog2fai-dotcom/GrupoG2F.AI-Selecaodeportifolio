@@ -180,6 +180,9 @@
     .header-cta:active {
       transform: scale(0.97);
     }
+    .header-cta .cta-short {
+      display: none;
+    }
 
     /* ========== HERO — MASTERPIECE ARCHITECTURAL EDITORIAL ========== */
     .hero-master {
@@ -1415,27 +1418,23 @@
     /* ========== RESPONSIVE ========== */
     @media (max-width: 1040px) {
       .hero-master {
-        padding-top: 110px;
-        padding-bottom: 60px;
+        padding-top: 100px;
+        padding-bottom: 50px;
       }
       .hero-master-grid {
         grid-template-columns: 1fr;
-        gap: 50px;
+        gap: 40px;
       }
       .hero-art-stage {
-        order: -1;
-        padding: 20px 0;
-      }
-      .float-card-top {
-        right: 0;
-        top: -12px;
-      }
-      .float-card-bottom {
-        left: 0;
-        bottom: -14px;
+        order: 1;
+        padding: 10px 0 20px;
       }
       .pillars-container {
         grid-template-columns: 1fr 1fr;
+      }
+      .strip-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
       }
       .selector-grid {
         grid-template-columns: 1fr;
@@ -1466,17 +1465,179 @@
     }
 
     @media (max-width: 768px) {
+      .site-header {
+        padding: 0 16px;
+        height: 56px;
+      }
       .header-nav { display: none; }
-      .pillars-container { grid-template-columns: 1fr; }
-      .phases-grid { grid-template-columns: 1fr; }
-      .hero-master { padding-top: 95px; }
-      .hero-cta-cluster { flex-direction: column; align-items: stretch; }
-      .btn-hero-primary, .btn-hero-minimal { justify-content: center; }
-      .hero-proof-strip { flex-wrap: wrap; gap: 20px; }
+      .header-brand { gap: 8px; }
+      .header-brand .brand-mark {
+        width: 28px;
+        height: 28px;
+        font-size: 0.8rem;
+        border-radius: 6px;
+      }
+      .header-brand .brand-title {
+        font-size: 0.95rem;
+        font-weight: 600;
+        white-space: nowrap;
+      }
+      .header-brand .brand-sub {
+        display: none;
+      }
+      .header-cta {
+        padding: 7px 14px;
+        font-size: 0.78rem;
+        font-weight: 600;
+        border-radius: 99px;
+        flex-shrink: 0;
+        gap: 0;
+      }
+      .header-cta svg {
+        display: none;
+      }
+      .header-cta .cta-full {
+        display: none;
+      }
+      .header-cta .cta-short {
+        display: inline;
+      }
+
+      .hero-master {
+        padding-top: 76px;
+        padding-bottom: 32px;
+      }
+      .hero-eyebrow {
+        margin-bottom: 12px;
+      }
+      .hero-master-heading {
+        font-size: clamp(1.9rem, 7vw, 2.5rem);
+        line-height: 1.2;
+        margin-bottom: 14px;
+        text-wrap: balance;
+      }
+      .hero-master-lead {
+        font-size: 0.92rem;
+        line-height: 1.65;
+        margin-bottom: 20px;
+      }
+      .hero-cta-cluster {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 10px;
+        margin-bottom: 20px;
+      }
+      .btn-hero-primary {
+        width: 100%;
+        justify-content: center;
+        min-height: 48px;
+        font-size: 0.9rem;
+        font-weight: 600;
+        padding: 13px 20px;
+        border-radius: 12px;
+      }
+      .btn-hero-minimal {
+        width: 100%;
+        justify-content: center;
+        min-height: 44px;
+        font-size: 0.85rem;
+        padding: 11px 18px;
+        border-radius: 12px;
+      }
+      .hero-proof-strip {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 14px 12px;
+        margin-top: 20px;
+        padding-top: 18px;
+        border-top: 1px solid var(--border-subtle);
+      }
       .proof-sep { display: none; }
-      .float-card-top, .float-card-bottom { position: static; margin: 10px auto; width: 100%; max-width: 320px; }
-      .portrait-composition { display: flex; flex-direction: column; align-items: center; }
-      .wpp-float-btn { bottom: 20px; right: 20px; width: 52px; height: 52px; }
+
+      .portrait-composition {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      .portrait-frame {
+        height: 360px;
+        max-width: 310px;
+        margin: 0 auto;
+        border-radius: 20px;
+      }
+      .float-card-top, .float-card-bottom {
+        position: static;
+        margin: 10px auto 0;
+        width: 100%;
+        max-width: 310px;
+        animation: none;
+      }
+
+      .pillars-strip { padding: 24px 16px; }
+      .pillars-container { grid-template-columns: 1fr; gap: 18px; }
+
+      .value-strip { padding: 24px 16px; }
+      .strip-grid { grid-template-columns: repeat(2, 1fr); gap: 16px 12px; }
+
+      .selector-sec { padding: 48px 16px; }
+      .selector-card { padding: 20px 16px; border-radius: 16px; }
+      .focus-btn { min-height: 48px; padding: 12px 14px; font-size: 0.82rem; }
+
+      .about-dr-sec { padding: 48px 16px; }
+      .about-dr-photo { aspect-ratio: 4/5; max-height: 360px; }
+      .about-dr-text h2 { font-size: clamp(1.6rem, 5.5vw, 2.2rem); }
+
+      .manifesto-sec { padding: 40px 16px; }
+
+      .clinic-gallery-sec { padding: 48px 16px; }
+      .gallery-grid a { height: 220px; }
+
+      .protocol-sec { padding: 48px 16px; }
+      .sec-header { margin-bottom: 28px; }
+      .sec-title { font-size: clamp(1.8rem, 6.5vw, 2.4rem); }
+      .phases-grid { grid-template-columns: 1fr; gap: 16px; }
+      .phase-card { min-height: auto; padding: 24px 20px; }
+      .phase-number { font-size: 2.2rem; margin-bottom: 12px; }
+
+      .compare-container-sec { padding: 48px 16px; }
+      .compare-board { grid-template-columns: 1fr; gap: 20px; }
+      .board-side { padding: 24px 20px; border-radius: 16px; }
+
+      .specialties-sec { padding: 48px 16px; }
+      .accordion-header { padding: 18px 20px; }
+      .accordion-inner { padding: 0 20px 20px 20px; font-size: 0.9rem; }
+
+      .consultation-sec { padding: 48px 16px; }
+      .consult-grid { grid-template-columns: 1fr; gap: 16px; }
+
+      .testi-sec { padding: 48px 16px; }
+      .testi-grid { grid-template-columns: 1fr; gap: 16px; }
+
+      .cta-banner-sec { padding: 60px 16px; }
+      .cta-banner-inner h2 { font-size: clamp(2rem, 7.5vw, 2.6rem); }
+      .cta-large-btn {
+        width: 100%;
+        max-width: 340px;
+        justify-content: center;
+        min-height: 52px;
+        padding: 14px 20px;
+        font-size: 0.95rem;
+      }
+
+      .site-footer { padding: 28px 16px; text-align: center; }
+      .footer-inner { flex-direction: column; justify-content: center; gap: 12px; }
+
+      .wpp-float-btn {
+        bottom: calc(18px + env(safe-area-inset-bottom, 0px));
+        right: 18px;
+        width: 52px;
+        height: 52px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .strip-grid { grid-template-columns: 1fr; gap: 16px; }
+      .header-cta span { font-size: 0.74rem; }
     }
 
     @media (prefers-reduced-motion: reduce) {
@@ -1507,7 +1668,8 @@
   </ul>
 
   <a href="https://wa.me/5511962236635?text=Olá%20Dra.%20Mariana%2C%20gostaria%20de%20agendar%20uma%20avaliação%20nutricional." target="_blank" class="header-cta">
-    <span>Agendar Consulta</span>
+    <span class="cta-full">Agendar Consulta</span>
+    <span class="cta-short">Agendar</span>
     <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
   </a>
 </header>
